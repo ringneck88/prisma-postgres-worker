@@ -34,7 +34,7 @@ export default {
 
 
 			return new Response(
-				JSON.stringify({ success: true, data: dbResponse }),
+				"OK",
 				{
 					status: 200,
 					headers: { "Content-Type": "application/json" },

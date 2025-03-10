@@ -18,15 +18,15 @@ datasource db {
 model entry{
   id        Int     @id @default(autoincrement())
 	createdAt  DateTime @default(now())
-	addprizecode Int
-	state String
+	addprizecode Int?
+	state String?
 	validated Boolean @default(false)
-	userID String
-	ticketnumber String @unique
-	email String
-	phone String
+	userID String?
+	ticketNumber String @unique
+	email String?
+	phone String?
 	firstName String
-	lastName String
+	lastName String?
 }
 
 

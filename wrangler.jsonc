@@ -6,7 +6,10 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "prisma-postgres-worker",
 	"main": "src/index.js",
-	"compatibility_date": "2025-03-03",
+	  "compatibility_flags": [
+    	"nodejs_compat"],
+		"compatibility_date": "2025-03-03" 	 ,
+
 	"observability": {
 		"enabled": true
 	},

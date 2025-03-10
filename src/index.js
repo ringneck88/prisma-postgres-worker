@@ -34,7 +34,7 @@ export default {
 
 
 			return new Response(
-				"OK",
+				'ok',
 				{
 					status: 200,
 					headers: { "Content-Type": "application/json" },

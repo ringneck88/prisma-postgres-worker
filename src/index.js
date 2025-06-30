@@ -19,7 +19,6 @@ export default {
 			datasourceUrl: env.DATABASE_URL
 		}).$extends(withAccelerate());
 
-
 		try {
 			const formData = await request.formData();
 

@@ -68,3 +68,4 @@ async function saveToDatabase(data, prisma) {
 		throw new Error("Failed to save data.");
 	}
 }
+

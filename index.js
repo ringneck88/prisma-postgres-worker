@@ -71,4 +71,3 @@ async function saveToDatabase(data, prisma) {
 				}
 }
 
-

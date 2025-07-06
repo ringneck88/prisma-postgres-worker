@@ -6,6 +6,8 @@ export interface Env {
 }
 
 
+
+
 export default {
 	async fetch(request, env, ctx) {
 		if (request.method !== "POST") {

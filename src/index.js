@@ -48,25 +48,23 @@ export default {
 	}
 }
 async function saveToDatabase(data, prisma) {
+	try {
+		const result = await prisma.entry.create({
+			data: {
+				firstName: data.firstName,
+				phone: data.phone,
+				email: data.email,
+				state: data.state,
+				agreeRules: data.agreeRules,
+				lastName: data.lastName,
+				addprizecode: data.addprizecode,
+				ticketNumber: data.ticketNumber,
+			},
+		});
 
-
-				try {
-					const result = await prisma.entry.create({
-						data: {
-							firstName: data.firstName,
-							phone: data.phone,
-							email: data.email,
-							state: data.state,
-							agreeRules: data.agreeRules,
-							lastName: data.lastName,
-							addprizecode: data.addprizecode,
-							ticketNumber: data.ticketNumber,
-						},
-					});
-
-					return result; // Ensure this is a valid JSON object
-				} catch (error) {
-					console.error("Database error:", error);
-					throw new Error("Failed to save data.");
-				}
+		return result; // Ensure this is a valid JSON object
+	} catch (error) {
+		console.error("Database ----- error:", error);
+		throw new Error("Failed to save data.");
+	}
 }

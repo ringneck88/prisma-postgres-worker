@@ -1,5 +1,10 @@
-import { PrismaClient } from './generated/prisma';
+import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
+
+export interface Env {
+  DATABASE_URL: string;
+}
+
 
 export default {
 	async fetch(request, env, ctx) {

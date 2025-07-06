@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client/edge";
+import { PrismaClient } from './generated/prisma';
 import { withAccelerate } from "@prisma/extension-accelerate";
 
 export default {
@@ -18,6 +18,8 @@ export default {
 		const prisma = new PrismaClient({
 			datasourceUrl: "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMDFKWkdUTTU0QlQ2NzE0TUdESkU1Sk02MDMiLCJ0ZW5hbnRfaWQiOiI1ZTFlMzg5NGJkM2VhZWJjZDQ1N2JmNzAyYTFjYTIxNjcwNGEzMThmODQwZjg1OTc5ZTdjMTVkYzczMzNiNGU0IiwiaW50ZXJuYWxfc2VjcmV0IjoiZjk1NTNiZTUtNmRkYi00ZjQ5LThhZDQtNWVhMzdiYjMyYjExIn0.WVMwrdQTbpasQFYD8VAfsK7Uulp6coQwvBr_g44bGHc"
 		}).$extends(withAccelerate());
+
+		await prisma.$connect()
 
 		try {
 			const formData = await request.formData();

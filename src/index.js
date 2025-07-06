@@ -15,7 +15,9 @@ export default {
 				headers: { "Content-Type": "application/json" },
 			});
 		}
-		const prisma = new PrismaClient().$extends(withAccelerate());
+		const prisma = new PrismaClient({
+			datasourceUrl: env.DATABASE_URL
+		}).$extends(withAccelerate());
 
 		try {
 			const formData = await request.formData();
@@ -62,7 +64,7 @@ async function saveToDatabase(data, prisma) {
 
 		return result; // Ensure this is a valid JSON object
 	} catch (error) {
-		console.error("Database ----- error:", error);
+		console.error("Database ----- error:"+"url = "+prisma.$datasourceUrl+ "  " + error);
 		throw new Error("Failed to save data.");
 	}
 }

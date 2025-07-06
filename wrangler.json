@@ -26,8 +26,9 @@
 
 		"production": {
 			"vars": {
-				"DATABASE_URL":"prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiY2QwYTZhNTAtZTNiOC00OGU5LWFkZWMtOTIwYmIzZGMzYWFhIiwidGVuYW50X2lkIjoiZjUzYWY5ODI2ODEyYzhjMGUxZjVkYzFlYzA1N2I1Yzc3MzExODRjOTQzZjNhZmNlNDQ0ZmNjMTg3YTE3MzI5NyIsImludGVybmFsX3NlY3JldCI6IjQ0MzYyMjdlLWE0MmYtNDI3MC05YWMyLWFlYTc0M2FhNDYzMiJ9.E-c9RboyZcS0R501C7nKv5UdQR6EBjWYnbmamlxHdFI",
-				}
+
+				"DATABASE_URL":"prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMDFKWkcwOUNUR0pLMEcxUlE0SEs2RVNNTTYiLCJ0ZW5hbnRfaWQiOiI1ZTFlMzg5NGJkM2VhZWJjZDQ1N2JmNzAyYTFjYTIxNjcwNGEzMThmODQwZjg1OTc5ZTdjMTVkYzczMzNiNGU0IiwiaW50ZXJuYWxfc2VjcmV0IjoiZjk1NTNiZTUtNmRkYi00ZjQ5LThhZDQtNWVhMzdiYjMyYjExIn0.az_jCqg_QcvG53AZhO2ZzPzijCpULh0o7uRmbvDJKiQ",
+			}
 		}
 	}
 }

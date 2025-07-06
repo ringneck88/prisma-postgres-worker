@@ -64,7 +64,7 @@ async function saveToDatabase(data, prisma) {
 
 		return result; // Ensure this is a valid JSON object
 	} catch (error) {
-		console.error("Database ----- error:"+"url = "+prisma.$datasourceUrl+ "  " + error);
+		console.error("Database ----- error:"+"url = "+prisma.datasourceUrl+ "  " + error);
 		throw new Error("Failed to save data.");
 	}
 }

@@ -15,7 +15,9 @@ export default {
 				headers: { "Content-Type": "application/json" },
 			});
 		}
-		const prisma = new PrismaClient().$extends(withAccelerate());
+		const prisma = new PrismaClient({
+			datasourceUrl: "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMDFKWkdUTTU0QlQ2NzE0TUdESkU1Sk02MDMiLCJ0ZW5hbnRfaWQiOiI1ZTFlMzg5NGJkM2VhZWJjZDQ1N2JmNzAyYTFjYTIxNjcwNGEzMThmODQwZjg1OTc5ZTdjMTVkYzczMzNiNGU0IiwiaW50ZXJuYWxfc2VjcmV0IjoiZjk1NTNiZTUtNmRkYi00ZjQ5LThhZDQtNWVhMzdiYjMyYjExIn0.WVMwrdQTbpasQFYD8VAfsK7Uulp6coQwvBr_g44bGHc"
+		}).$extends(withAccelerate());
 
 		try {
 			const formData = await request.formData();
@@ -62,7 +64,7 @@ async function saveToDatabase(data, prisma) {
 
 		return result; // Ensure this is a valid JSON object
 	} catch (error) {
-		console.error("Database ----- error:"+"url = "+prisma.datasourceUrl+ "  " + error);
+		console.error("Database ----- error:"+"url = "+prisma.$datasourceUrl+ "  " + error);
 		throw new Error("Failed to save data.");
 	}
 }
